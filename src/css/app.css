@@ -10,16 +10,35 @@
 }
 
 #app .container {
-  width: 376px;
+  min-width: 400px;
+  width: 30vw;
   height: 666px;
   z-index: 100;
-
-  background: white;
-  border-radius: 3px;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .9);
-}
-
-#app .container-view {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   padding: 20px;
+  background: white;
+  position: relative;
+  border-radius: 3px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.9);
 }
 
+#app .section {
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  padding-right: 10px;
+  padding-bottom: 36px;
+}
+
+#app .header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
