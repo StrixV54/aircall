@@ -139,7 +139,7 @@ const ActiveCallLogs = () => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          height: "100vh", // You can adjust the height as needed
+          height: "100%",
         }}
       >
         <p style={{ textAlign: "center" }}>There are no Active calls Logs</p>

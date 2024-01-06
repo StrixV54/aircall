@@ -137,7 +137,7 @@ const ArchivedCalls = () => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          height: "100vh", // You can adjust the height as needed
+          height: "100%",
         }}
       >
         <p style={{ textAlign: "center" }}>There are no archived calls</p>
