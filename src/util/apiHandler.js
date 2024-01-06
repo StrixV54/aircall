@@ -1,15 +1,12 @@
 import axios from "axios";
 import 'regenerator-runtime/runtime';
 
-const API_BASE_URL = "https://cerulean-marlin-wig.cyclic.app";
+const API_BASE_URL = "https://cerulean-marlin-wig.cyclic.app"; //can be set in environment variable
 
 // Fetch all calls
 export const fetchCalls = async () => {
   try {
-    //const response = await axios.get(`${API_BASE_URL}/activities`);
-    const response = await axios.get(
-      `https://cerulean-marlin-wig.cyclic.app/activities`
-    );
+    const response = await axios.get(`${API_BASE_URL}/activities`);
     const data = response.data;
     // Filter out calls that do not have both 'to' and 'from' values
     const validCalls = data.filter(
@@ -26,7 +23,7 @@ export const fetchCalls = async () => {
 export const archiveCall = async (callId) => {
   try {
     await axios.patch(
-      `https://cerulean-marlin-wig.cyclic.app//activities/${callId}`,
+      `${API_BASE_URL}/activities/${callId}`,
       {
         is_archived: true,
       }
@@ -41,7 +38,7 @@ export const archiveCall = async (callId) => {
 export const unarchiveCall = async (callId) => {
   try {
     await axios.patch(
-      `https://cerulean-marlin-wig.cyclic.app/activities/${callId}`,
+      `${API_BASE_URL}/activities/${callId}`,
       {
         is_archived: false,
       }
@@ -57,7 +54,7 @@ export const archiveAllCalls = async (calls) => {
   try {
     const archivePromises = calls.map((call) => {
       return axios.patch(
-        `https://cerulean-marlin-wig.cyclic.app/activities/${call.id}`,
+        `${API_BASE_URL}/activities/${call.id}`,
         {
           is_archived: true,
         }
@@ -75,7 +72,7 @@ export const unarchiveAllCalls = async (calls) => {
   try {
     const unarchivePromises = calls.map((call) => {
       return axios.patch(
-        `https://cerulean-marlin-wig.cyclic.app/activities/${call.id}`,
+        `${API_BASE_URL}/activities/${call.id}`,
         {
           is_archived: false,
         }
